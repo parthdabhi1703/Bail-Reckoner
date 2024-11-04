@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bail Reckoner</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="utility.css" />
+    <!-- <link rel="stylesheet" href="responsiveness.css" /> -->
+    <link rel="stylesheet" href="login.css" />
+    <!-- FontAwesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <nav>
+      <div class="logo">
+        <img src="assets/logo.png" alt="Bail Reckoner Logo" />
+        <h1><a href="index.html">Bail Reckoner</a></h1>
+      </div>
+      <ul class="nav-links">
+        <li>
+          <span><a href="#">Home</a></span>
+        </li>
+        <li>
+          <span><a href="#">Contact Us</a></span>
+        </li>
+        <li>
+          <span><a href="#">Case Management</a></span>
+        </li>
+        <li>
+          <span><a href="#">Bail Calculator</a></span>
+        </li>
+      </ul>
+      <div class="auth-buttons">
+        <span><button class="login-btn">Login</button></span>
+        <span><button class="signup-btn">Signup</button></span>
+      </div>
+    </nav>
+
+    <!-- Main content -->
+    <div>
+      <div class="full-height welcome-section" id="page1">
+        <h1>Welcome to Bail Reckoner</h1>
+        <h2>Streamlining Legal Processes with Ease</h2>
+        <p>
+          At Bail Reckoner, we are dedicated to simplifying complex legal
+          procedures, offering a seamless experience for everyone in the
+          judicial system—whether you’re a lawyer, judge, or prisoner. Our
+          platform is designed to provide essential tools for managing cases,
+          calculating bail, and ensuring quick access to legal resources.
+        </p>
+      </div>
+
+      <div class="full-height" id="page2">
+        <div class="features">
+          <div class="feature-box">
+            <h3>Case Management</h3>
+            <p>
+              Track and manage cases efficiently. Our system allows legal
+              professionals to organize case files, monitor updates, and
+              collaborate seamlessly with clients.
+            </p>
+          </div>
+
+          <div class="feature-box">
+            <h3>Bail Calculator</h3>
+            <p>
+              Our sophisticated bail calculator helps you determine appropriate
+              bail amounts based on specific case details, ensuring fairness and
+              accuracy every time.
+            </p>
+          </div>
+
+          <div class="feature-box">
+            <h3>Secure Access for Everyone</h3>
+            <p>
+              From prisoners looking to manage their accounts, to lawyers and
+              judges overseeing multiple cases, our platform provides secure,
+              role-based access tailored to your needs.
+            </p>
+          </div>
+        </div>
+
+        <div class="why-section">
+          <h2>Why Bail Reckoner?</h2>
+          <ul>
+            <li>
+              <strong>User-Friendly Interface:</strong> Easy to navigate, with a
+              focus on user experience.
+            </li>
+            <li>
+              <strong>Efficiency & Accuracy:</strong> Save time with our
+              automated tools and avoid manual errors.
+            </li>
+            <li>
+              <strong>Accessibility:</strong> Available on both desktop and
+              mobile, so you can access important information on the go.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Login Popup Form -->
+    <div id="loginForm" class="popup-form" style="display: none">
+      <div class="tab-form">
+        <div class="tab-header login-header">
+          <div class="active" onclick="showLoginTab('prisoner')">Prisoner</div>
+          <div onclick="showLoginTab('lawyer')">Lawyer</div>
+          <div onclick="showLoginTab('judge')">Judge</div>
+        </div>
+
+        <div class="tab-body">
+          <div class="login-prisoner active">
+            <h2>Prisoner Login</h2>
+            <div class="form-input">
+              <label for="prisoner-login-username">Username</label>
+              <input
+                id="prisoner-login-username"
+                type="text"
+                placeholder="Enter username"
+              />
+            </div>
+            <div class="form-input">
+              <label for="prisoner-login-password">Password</label>
+              <input
+                id="prisoner-login-password"
+                type="password"
+                placeholder="Enter password"
+              />
+            </div>
+            <div class="form-input">
+              <button>Login</button>
+            </div>
+          </div>
+
+          <div class="login-lawyer">
+            <h2>Lawyer Login</h2>
+            <div class="form-input">
+              <label for="lawyer-login-username">Username</label>
+              <input
+                id="lawyer-login-username"
+                type="text"
+                placeholder="Enter username"
+              />
+            </div>
+            <div class="form-input">
+              <label for="lawyer-login-password">Password</label>
+              <input
+                id="lawyer-login-password"
+                type="password"
+                placeholder="Enter password"
+              />
+            </div>
+            <div class="form-input">
+              <button>Login</button>
+            </div>
+          </div>
+
+          <div class="login-judge">
+            <h2>Judge Login</h2>
+            <div class="form-input">
+              <label for="judge-login-username">Username</label>
+              <input
+                id="judge-login-username"
+                type="text"
+                placeholder="Enter username"
+              />
+            </div>
+            <div class="form-input">
+              <label for="judge-login-password">Password</label>
+              <input
+                id="judge-login-password"
+                type="password"
+                placeholder="Enter password"
+              />
+            </div>
+            <div class="form-input">
+              <button>Login</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Signup Popup Form -->
+    <div id="signupForm" class="popup-form" style="display: none">
+      <div class="tab-form">
+        <div class="tab-header signup-header">
+          <div class="active" onclick="showSignupTab('prisoner')">Prisoner</div>
+          <div onclick="showSignupTab('lawyer')">Lawyer</div>
+          <div onclick="showSignupTab('judge')">Judge</div>
+        </div>
+
+        <div class="tab-body">
+          <div class="signup-prisoner active">
+            <h2>Create Prisoner Account</h2>
+            <div class="form-input">
+              <label for="prisoner-signup-username">Username</label>
+              <input
+                id="prisoner-signup-username"
+                type="text"
+                placeholder="Enter username"
+              />
+            </div>
+            <div class="form-input">
+              <label for="prisoner-signup-email">Email</label>
+              <input
+                id="prisoner-signup-email"
+                type="email"
+                placeholder="Enter email"
+              />
+            </div>
+            <div class="form-input">
+              <label for="confirm-prisoner-email">Confirm Email</label>
+              <input
+                id="confirm-prisoner-email"
+                type="email"
+                placeholder="Confirm email"
+              />
+            </div>
+            <div class="form-input">
+              <label for="prisoner-signup-password">Password</label>
+              <input
+                id="prisoner-signup-password"
+                type="password"
+                placeholder="Enter password"
+              />
+            </div>
+            <div class="form-input">
+              <button>Signup</button>
+            </div>
+          </div>
+
+          <div class="signup-lawyer">
+            <h2>Create Lawyer Account</h2>
+            <div class="form-input">
+              <label for="lawyer-signup-username">Username</label>
+              <input
+                id="lawyer-signup-username"
+                type="text"
+                placeholder="Enter username"
+              />
+            </div>
+            <div class="form-input">
+              <label for="lawyer-signup-email">Email</label>
+              <input
+                id="lawyer-signup-email"
+                type="email"
+                placeholder="Enter email"
+              />
+            </div>
+            <div class="form-input">
+              <label for="confirm-lawyer-email">Confirm Email</label>
+              <input
+                id="confirm-lawyer-email"
+                type="email"
+                placeholder="Confirm email"
+              />
+            </div>
+            <div class="form-input">
+              <label for="lawyer-signup-password">Password</label>
+              <input
+                id="lawyer-signup-password"
+                type="password"
+                placeholder="Enter password"
+              />
+            </div>
+            <div class="form-input">
+              <button>Signup</button>
+            </div>
+          </div>
+
+          <div class="signup-judge">
+            <h2>Create Judge Account</h2>
+            <div class="form-input">
+              <label for="judge-signup-username">Username</label>
+              <input
+                id="judge-signup-username"
+                type="text"
+                placeholder="Enter username"
+              />
+            </div>
+            <div class="form-input">
+              <label for="judge-signup-email">Email</label>
+              <input
+                id="judge-signup-email"
+                type="email"
+                placeholder="Enter email"
+              />
+            </div>
+            <div class="form-input">
+              <label for="confirm-judge-email">Confirm Email</label>
+              <input
+                id="confirm-judge-email"
+                type="email"
+                placeholder="Confirm email"
+              />
+            </div>
+            <div class="form-input">
+              <label for="judge-signup-password">Password</label>
+              <input
+                id="judge-signup-password"
+                type="password"
+                placeholder="Enter password"
+              />
+            </div>
+            <div class="form-input">
+              <button>Signup</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="footer">
+        <div class="footer-content">
+          <div class="social-media">
+            <h4>Follow Us</h4>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+          <div class="contact-info">
+            <h4>Contact Us</h4>
+            <p>Email: info@bailreckoner.com</p>
+            <p>Phone: (123) 456-7890</p>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2024 Bail Reckoner. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

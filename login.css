@@ -1,0 +1,153 @@
+/* General Reset and Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+/* Popup Form Styles */
+.popup-form {
+  position: fixed;
+  top: 50px;
+  left: 580px;
+  width: 100%;
+  height: 100%;
+  display: none; /* Initially hidden */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  z-index: 2000; /* Above other content */
+}
+
+.tab-form {
+  position: relative; /* Relative positioning for inner content */
+  width: 100%; /* Responsive width */
+  max-width: 400px; /* Max width for larger screens */
+  background: #fff; /* White background for the form */
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3); /* Enhanced shadow for depth */
+  padding: 30px; /* Inner spacing */
+  border-radius: 12px; /* Slightly rounder corners */
+  height: 600px; /* Auto height to accommodate content */
+  overflow: hidden; /* Prevent overflow */
+  animation: fadeIn 0.3s ease; /* Add animation */
+}
+
+/* Optional: Fade-in animation for the popup */
+@keyframes fadeIn {
+  from {
+    opacity: 0; /* Start fully transparent */
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1; /* End fully opaque */
+    transform: translateY(0);
+  }
+}
+
+.tab-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+.tab-header > div {
+  flex: 1;
+  padding: 10px 0;
+  text-align: center;
+  color: #888; /* Lighter text color */
+  cursor: pointer;
+  border-bottom: 2px solid transparent; /* Bottom border for active tab */
+  transition: color 300ms ease-in-out, border-color 300ms ease-in-out; /* Smooth transition for hover */
+}
+
+.tab-header > div.active {
+  border-color: #4a9ff3; /* Active tab border color */
+  color: #4a9ff3; /* Active tab text color */
+  background: #e9f4ff; /* Active tab background color */
+}
+
+.tab-body {
+  position: relative;
+  min-height: 600px;
+  overflow: hidden;
+  margin-top: 20px; /* Space above tab body */
+}
+
+.tab-body > div {
+  position: absolute;
+  width: 100%;
+  top: 150%; /* Initially off-screen for better animation */
+  opacity: 0;
+  padding: 5px 25px;
+  transition: opacity 300ms ease-in-out, top 300ms ease-in-out; /* Smooth transition */
+}
+
+.tab-body > div.active {
+  top: 0;
+  opacity: 1;
+  transition: opacity 300ms ease-in-out 0ms, top 300ms ease-in-out 0ms; /* Active state transition */
+}
+
+.tab-body > div h2 {
+  font-size: 24px; /* Increased heading size for better visibility */
+  color: #333; /* Darker heading color */
+  text-align: center;
+  margin-bottom: 15px; /* Reduced margin */
+}
+
+.tab-body > div .form-input {
+  margin: 15px 0; /* Increased spacing between inputs */
+}
+
+.tab-body > div .form-input label {
+  display: block;
+  font-size: 16px; /* Larger label for better readability */
+  color: #555; /* Label color */
+}
+
+.tab-body > div .form-input input {
+  width: 100%;
+  margin-top: 5px;
+  font-size: 16px; /* Larger input text */
+  padding: 12px; /* Increased padding for inputs */
+  border: 1px solid #ccc; /* Border for input fields */
+  border-radius: 5px; /* Rounded corners for inputs */
+  transition: border-color 300ms ease-in-out; /* Transition on focus */
+}
+
+.tab-body > div .form-input input:focus {
+  border-color: #4a9ff3; /* Change border color on focus */
+  outline: none; /* Remove default outline */
+}
+
+.tab-body > div .form-input button {
+  width: 100%;
+  margin-top: 15px; /* Increased spacing */
+  padding: 12px; /* More padding for buttons */
+  font-size: 16px; /* Larger button text */
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: #4a9ff3; /* Primary button color */
+  color: #fff; /* White text */
+  font-weight: 600;
+  border-radius: 5px; /* Rounded corners for buttons */
+  transition: background 300ms ease-in-out, transform 300ms ease-in-out; /* Button hover effects */
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* Reduce shadow for pressed effect */
+}
+
+.tab-body > div .form-input button:hover {
+  background: #3a8cdb; /* Darker on hover */
+}
+
+.tab-body > div .form-input button:active {
+  background: #357bbd; /* Even darker background on press */
+  transform: translateY(
+    2px
+  ); /* Moves the button slightly down to simulate pressing */
+}

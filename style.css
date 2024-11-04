@@ -1,0 +1,429 @@
+/* General reset and styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  height: 80px; /* Adjust height as necessary */
+  background-color: #333;
+  color: white;
+  z-index: 1000;
+  width: 100%;
+  overflow: hidden;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+}
+
+nav a:hover {
+  color: #ffcc00;
+  transition: ease-in-out 0.15s;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 50px;
+  height: auto;
+  margin-right: 10px;
+}
+
+.logo h1 {
+  font-size: 1.5rem;
+  color: white;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 10px;
+  position: relative;
+  display: inline-block;
+  z-index: 1; /* Ensure text stays on top */
+}
+
+/* Styling for the list */
+.nav-links li span {
+  position: relative;
+  display: inline-block;
+  overflow: hidden; /* Ensures the background animation doesn't overflow */
+  border-radius: 5px; /* Keeps the rounded corners intact */
+}
+
+.auth-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.auth-buttons span {
+  display: inline-block;
+  position: relative;
+  overflow: hidden; /* Hide the background overflow */
+  border-radius: 5px; /* Maintain button's border-radius */
+}
+
+.login-btn,
+.signup-btn {
+  font-size: medium;
+  background-color: #fff; /* Initial background */
+  color: #414141;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border: none;
+  position: relative;
+  z-index: 1; /* Ensure text stays above the background */
+}
+
+/* Content section with large text, aligned to the left */
+.content-section {
+  min-height: 100vh;
+  display: flex;
+  justify-content: flex-start; /* Align content to the left */
+  align-items: center;
+  padding-left: 10%; /* Add padding to move content away from the left edge */
+  color: #8e461e;
+}
+
+/* Larger text in the content */
+.content h1 {
+  font-size: 3rem; /* Make the heading larger */
+  margin-bottom: 1rem;
+}
+
+.content p {
+  font-size: 1.5rem; /* Increase the size of the paragraph */
+}
+
+/* Footer Styling */
+footer {
+  background-color: #333;
+  height: 110px;
+  bottom: 0px;
+  color: white;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.2);
+  clear: both;
+  position: relative;
+  z-index: 1;
+}
+
+.footer-container {
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.footer {
+  width: 100%;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: start;
+}
+
+.footer-bottom {
+  margin-top: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.features {
+  margin-bottom: 4rem;
+}
+
+.social-media h4 {
+  color: white;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+  margin-top: 0px;
+}
+.contact-info h4 {
+  color: white;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+  margin-top: 0px;
+}
+
+.social-media a {
+  color: white;
+  font-size: 1.3rem;
+  transition: color 0.3s ease;
+  margin-right: 5px;
+}
+.contact-info p {
+  color: white;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.social-media a:hover {
+  color: #ffcc00;
+  transition: color 0.1s ease-in-out;
+}
+.contact-info p:hover {
+  cursor: pointer;
+  color: #ffcc00;
+  transition: color 0.1s ease-in-out;
+}
+
+.contact {
+  color: white;
+}
+
+.contact p {
+  margin: 0.5rem 0;
+}
+
+.contact a {
+  color: #ffcc00;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.contact a:hover {
+  color: #e6b800;
+  text-decoration: underline;
+}
+
+#page1 {
+  background-image: url("assets/background.jpg");
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-top: 80px;
+  min-height: 90vh;
+  display: flex; /* Allows for easy centering of content if needed */
+  flex-direction: column; /* Arranges children in a column */
+  align-items: flex-start; /* Centers content horizontally */
+  padding: 2rem; /* Optional: Adds padding for better spacing */
+  background-color: #dfe0e2; /* Optional: Sets a background color */
+}
+
+#page1 h1 {
+  font-size: 4rem; /* Adjust heading size as necessary */
+  color: #414141; /* Text color */
+  margin-bottom: 1rem; /* Space below heading */
+  padding-top: 6rem;
+}
+#page1 h2 {
+  font-size: 2rem;
+  color: grey;
+  margin-bottom: 1rem;
+}
+#page1 p {
+  font-size: 1.5rem; /* Adjust paragraph size */
+  color: #666; /* Text color */
+  text-align: left; /* Center the text */
+  margin-bottom: 1rem;
+}
+
+#page2 {
+  min-height: 50vh;
+  padding-bottom: 4rem; /* To avoid overflow into the footer */
+  display: flex; /* Allows for easy centering of content if needed */
+  flex-direction: column; /* Arranges children in a column */
+  justify-content: center; /* Centers content vertically */
+  align-items: center; /* Centers content horizontally */
+  padding: 2rem; /* Optional: Adds padding for better spacing */
+  background-color: #dfe0e2; /* Optional: Sets a background color */
+}
+
+#page2 h1 {
+  font-size: 2rem; /* Adjust heading size as necessary */
+  color: #414141; /* Text color */
+  margin-bottom: 1rem; /* Space below heading */
+}
+#page2 h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+#page2 p {
+  font-size: 1rem; /* Adjust paragraph size */
+  color: #666; /* Text color */
+  text-align: center; /* Center the text */
+}
+
+/* Utility Styles */
+.nav-links li span:hover {
+  box-shadow: 0 3px 8px rgb(0, 0, 0);
+}
+
+/* The yellow background effect */
+.nav-links li a::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: #ffcc00;
+  left: 0;
+  bottom: -105%;
+  border-radius: 70%;
+  transition: all ease 0.3s;
+  z-index: -1; /* Puts the background behind the text */
+}
+
+/* On hover, animate the background */
+.nav-links li a:hover::after {
+  color: #333333cc;
+  bottom: 0;
+  border-radius: 0;
+}
+
+.nav-links li a:hover {
+  color: #414141;
+  transition: color all ease 0.3s;
+}
+
+.login-btn::after,
+.signup-btn::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: #ffcc00;
+  left: 0;
+  bottom: -100%; /* Start the background animation from below the button */
+  transition: all ease-in-out 0.2s;
+  z-index: -1; /* Background goes behind the button text */
+  border-radius: 70%;
+}
+
+.auth-buttons span:hover .login-btn::after,
+.auth-buttons span:hover .signup-btn::after {
+  bottom: 0; /* Slide the background up when hovering */
+  border-radius: 0;
+}
+
+.auth-buttons span:hover .login-btn,
+.auth-buttons span:hover .signup-btn {
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Container Styles */
+.welcome-section {
+  background-color: #f5f5f5;
+  color: #333;
+  padding: 3rem;
+  text-align: left; /* Aligns text to the left */
+  display: flex;
+  justify-content: left; /* Center vertically */
+  align-items: center; /* Align items to the left */
+  min-height: 100vh; /* Ensures full viewport height */
+}
+
+.welcome-section h1 {
+  font-size: 4rem;
+  color: #414141;
+  margin-bottom: 1rem;
+}
+
+.welcome-section p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  max-width: 800px; /* Limit the width of the paragraph for better readability */
+}
+
+/* Feature Boxes */
+.features {
+  display: flex;
+  justify-content: space-around;
+  margin: 2rem 0;
+}
+
+.feature-box {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 30%;
+  transition: transform 0.3s ease;
+  overflow: hidden;
+}
+
+.feature-box:hover {
+  cursor: pointer;
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.feature-box h3 {
+  text-align: center;
+  font-size: 1.6rem;
+  color: #414141;
+  margin-bottom: 1rem;
+}
+
+.feature-box p {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Why Section */
+.why-section {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  margin-top: 2rem;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.11);
+}
+
+.why-section h2 {
+  text-align: center;
+}
+
+.why-section ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.why-section ul li {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.why-section ul li strong {
+  color: #414141;
+}

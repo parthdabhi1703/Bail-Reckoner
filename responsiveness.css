@@ -1,0 +1,238 @@
+/* ======== RESPONSIVENESS =========
+
+/* Tablet devices */
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .nav-links li a {
+    font-size: 1.2rem;
+  }
+
+  .auth-buttons {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .content-section {
+    padding-right: 5%;
+    text-align: center; /* Center text for smaller devices */
+  }
+
+  .content h1 {
+    font-size: 2.5rem;
+  }
+
+  .content p {
+    font-size: 1.3rem;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+/* Hamburger menu styles */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 30px;
+  height: 21px;
+  cursor: pointer;
+  top: 1.5rem; /* Place it near the top */
+  right: 1.5rem; /* Align it to the right */
+  z-index: 1001; /* Ensure it is above other elements */
+}
+
+.hamburger span {
+  height: 3px;
+  background-color: white;
+  border-radius: 2px;
+  transition: 0.3s ease;
+}
+
+/* When the menu is opened, animate the hamburger icon */
+.hamburger.active span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* Show hamburger menu on mobile only */
+@media (max-width: 480px) {
+  .hamburger {
+    display: flex;
+  }
+
+  /* Ensure nav links are hidden by default on mobile */
+  .nav-links {
+    display: none;
+  }
+
+  .nav-links.active {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    padding: 1rem;
+    background-color: #444;
+  }
+}
+
+/* Hide sidebar by default */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -100%; /* Sidebar is hidden off-screen initially */
+  width: 100%;
+  height: 100%;
+  background-color: rgba(51, 51, 51, 0.9); /* Slight transparency */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  transition: right 0.3s ease;
+  z-index: 999; /* Below the hamburger */
+}
+
+/* Show sidebar when active */
+.sidebar.active {
+  right: 0; /* Slide the sidebar into view */
+}
+
+/* Style for the nav-links inside the sidebar */
+.sidebar .nav-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.sidebar .nav-links li a {
+  color: white;
+  font-size: 1.5rem;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.sidebar .nav-links li a:hover {
+  color: #ffcc00;
+  transition: color 0.3s ease;
+}
+
+/* Style for the auth buttons in the sidebar */
+.auth-buttons-mobile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.auth-buttons-mobile button {
+  background-color: #ffcc00;
+  color: #333;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 100%; /* Wider buttons */
+}
+
+.auth-buttons-mobile button:hover {
+  background-color: #e6b800;
+}
+
+/* Hamburger menu styling */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 0.5rem;
+}
+
+.hamburger span {
+  background-color: white;
+  width: 30px;
+  height: 4px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg); /* First line becomes diagonal */
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0; /* Hide middle line */
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg); /* Last line becomes diagonal */
+}
+
+/* Show hamburger menu on mobile */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none; /* Hide desktop nav-links */
+  }
+
+  .auth-buttons {
+    display: none; /* Hide desktop auth buttons */
+  }
+}
+
+/* When the menu is opened, animate the hamburger icon into an 'X' */
+.hamburger.active span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg); /* First line becomes diagonal */
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0; /* Hide the middle line */
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg); /* Last line becomes diagonal */
+}
+
+/* Adjust hamburger position when sidebar is active */
+.sidebar.active + .hamburger {
+  top: 1.5rem; /* Keep it at the top */
+  right: 1.5rem; /* Keep it aligned to the right */
+}
+
+/* Responsive Styles */
+@media (max-width: 480px) {
+  .tab-form {
+    padding: 20px; /* Reduce padding on smaller screens */
+  }
+
+  .tab-body > div h2 {
+    font-size: 20px; /* Adjust heading size for smaller screens */
+  }
+
+  .tab-body > div .form-input label {
+    font-size: 14px; /* Adjust label size */
+  }
+
+  .tab-body > div .form-input input,
+  .tab-body > div .form-input button {
+    font-size: 14px; /* Adjust input and button font size */
+  }
+}
